@@ -19,6 +19,10 @@ class ClientsController extends Controller
         return view('clientes/modify', ['cliente' => Cliente::findOrFail($id)]);
     }
 
+    public function getEliminar($id) {
+        return view('clientes/delete', ['cliente' => Cliente::findOrFail($id)]);
+    }
+
     /**
      * @param  Request  $request
      * @return Response
@@ -49,6 +53,17 @@ class ClientsController extends Controller
         $cliente->nit = $request->nit;
     
         $cliente->save();
+    
+        return redirect('/clientes');
+    }
+    
+    /**
+     * @param  Request  $request
+     * @return Response
+     */
+    public function apiEliminar(Request $request) {
+        $cliente = Cliente::findOrFail($request->id);
+        $cliente->delete();
     
         return redirect('/clientes');
     }
