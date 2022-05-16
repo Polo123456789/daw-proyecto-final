@@ -9,6 +9,9 @@ use App\Models\Producto;
 use App\Http\Controllers\ClientsController;
 use App\Models\Cliente;
 
+use App\Http\Controllers\EmployeesController;
+use App\Models\Empleado;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,7 +50,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/api/clientes/modificar', [ClientsController::class, 'apiModificar']);
     Route::get('/clientes/eliminar/{id}', [ClientsController::class, 'getEliminar']);
     Route::post('/api/clientes/eliminar', [ClientsController::class, 'apiEliminar']);
-    
+
+    Route::get('/empleados', [EmployeesController::class, 'index']);
+    Route::get('/empleados/crear', [EmployeesController::class, 'getCrear']);
+    Route::post('/api/empleados/crear', [EmployeesController::class, 'apiCrear']);
+    Route::get('/empleados/modificar/{id}', [EmployeesController::class, 'getModificar']);
+    Route::post('/api/empleados/modificar', [EmployeesController::class, 'apiModificar']);
+    Route::get('/empleados/eliminar/{id}', [EmployeesController::class, 'getEliminar']);
+    Route::post('/api/empleados/eliminar', [EmployeesController::class, 'apiEliminar']);
 
 });
 
