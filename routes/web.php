@@ -19,17 +19,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::group(['middleware' => 'auth'], function () {
 
-Route::get('/productos', function () {
-    return view('productos/index', ['productos' => Producto::all()]);
-})->middleware(['auth'])->name('productos');
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+    
+    Route::controller('/productos', 'ProductsController');
 
-Route::match(['get', 'post'], '/productos/crear', function () { // TODO: Fix to hanlde post
-    return view('productos/create');
-})->middleware(['auth'])->name('crear productos');
+});
+
+
 
 
 require __DIR__.'/auth.php';
