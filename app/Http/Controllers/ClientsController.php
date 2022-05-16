@@ -15,6 +15,10 @@ class ClientsController extends Controller
         return view('clientes/create');
     }
 
+    public function getModificar($id) {
+        return view('clientes/modify', ['cliente' => Cliente::findOrFail($id)]);
+    }
+
     /**
      * @param  Request  $request
      * @return Response
@@ -29,6 +33,23 @@ class ClientsController extends Controller
 
         $cliente->save();
 
+        return redirect('/clientes');
+    }
+
+    /**
+     * @param  Request  $request
+     * @return Response
+     */
+    public function apiModificar(Request $request) {
+        $cliente = Cliente::findOrFail($request->id);
+        $cliente->nombre = $request->nombre;
+        $cliente->correo = $request->correo;
+        $cliente->telefono = $request->telefono;
+        $cliente->direccion = $request->direccion;
+        $cliente->nit = $request->nit;
+    
+        $cliente->save();
+    
         return redirect('/clientes');
     }
 }
