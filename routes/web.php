@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 use App\Models\Producto;
 
 /*
@@ -23,8 +24,12 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/productos', function () {
-    
     return view('productos/index', ['productos' => Producto::all()]);
 })->middleware(['auth'])->name('productos');
+
+Route::match(['get', 'post'], '/productos/crear', function () { // TODO: Fix to hanlde post
+    return view('productos/create');
+})->middleware(['auth'])->name('crear productos');
+
 
 require __DIR__.'/auth.php';
