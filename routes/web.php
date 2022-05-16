@@ -35,7 +35,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/productos/modificar/{id}', [ProductsController::class, 'getModificar']);
     Route::post('/api/productos/modificar', [ProductsController::class, 'apiModificar']);
 
-
+    Route::get('/productos/eliminar/{id}', [ProductsController::class, 'getEliminar']);
+    Route::post('/api/productos/eliminar', [ProductsController::class, 'apiEliminar']);
 });
 
 

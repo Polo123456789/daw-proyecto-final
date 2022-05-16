@@ -23,6 +23,13 @@ class ProductsController extends Controller
     }
 
     /**
+     * @param Integer $id
+     */
+    public function getEliminar($id) {
+        return view('productos/delete', ['producto' => Producto::findOrFail($id)]);
+    }
+
+    /**
      * @param  Request  $request
      * @return Response
      */
@@ -48,6 +55,17 @@ class ProductsController extends Controller
         $producto->existencias = $request->existencias;
 
         $producto->save();
+
+        return redirect('/productos');
+    }
+
+    /**
+     * @param  Request  $request
+     * @return Response
+     */
+    public function apiEliminar(Request $request) {
+        $producto = Producto::findOrFail($request->id);
+        $producto->delete();
 
         return redirect('/productos');
     }
