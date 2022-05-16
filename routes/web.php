@@ -28,8 +28,12 @@ Route::group(['middleware' => 'auth'], function () {
     })->name('dashboard');
 
     Route::get('/productos', [ProductsController::class, 'index']);
+
     Route::get('/productos/crear', [ProductsController::class, 'getCrear']);
     Route::post('/api/productos/crear',  [ProductsController::class, 'apiCrear']);
+
+    Route::get('/productos/modificar/{id}', [ProductsController::class, 'getModificar']);
+    Route::post('/api/productos/modificar', [ProductsController::class, 'apiModificar']);
 
 
 });
