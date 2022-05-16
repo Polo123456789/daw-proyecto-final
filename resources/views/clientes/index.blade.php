@@ -25,7 +25,7 @@
                     <tr class="bg-white border-b">
                         <td class="px-6 py-4">{{$cliente->id}}</td>
                         <td class="px-6 py-4">{{$cliente->nombre}}</td>
-                        <td class="px-6 py-4">Q {{$cliente->correo}}</td>
+                        <td class="px-6 py-4">{{$cliente->correo}}</td>
                         <td class="px-6 py-4">{{$cliente->telefono}}</td>
                         <td class="px-6 py-4">{{$cliente->direccion}}</td>
                         <td class="px-6 py-4">{{$cliente->nit}}</td>

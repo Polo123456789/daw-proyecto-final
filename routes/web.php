@@ -41,6 +41,8 @@ Route::group(['middleware' => 'auth'], function () {
 
 
     Route::get('/clientes', [ClientsController::class, 'index']);
+    Route::get('/clientes/crear', [ClientsController::class, 'getCrear']);
+    Route::post('/api/clientes/crear', [ClientsController::class, 'apiCrear']);
 });
 
 
