@@ -21,14 +21,14 @@
             @if (count($productos) != 0)
                 @foreach ($productos as $producto)
                     <tr class="bg-white border-b">
-                        <td class="px-6 py-4">$producto->id</td>
-                        <td class="px-6 py-4">$producto->nombre</td>
-                        <td class="px-6 py-4">Q $producto->precio</td>
-                        <td class="px-6 py-4">$producto->existencias</td>
+                        <td class="px-6 py-4">{{$producto->id}}</td>
+                        <td class="px-6 py-4">{{$producto->nombre}}</td>
+                        <td class="px-6 py-4">Q {{$producto->precio}}</td>
+                        <td class="px-6 py-4">{{$producto->existencias}}</td>
                         <td class="px-6 py-4">
                             <x-link-button 
                                 class="text-black border-black hover:text-white hover:bg-black"
-                                href="/productos/modificar?id={{$producto->id}}"
+                                href="/productos/modificar/{{$producto->id}}"
                             >
                                 Modificar
                             </x-link-button>
@@ -36,7 +36,7 @@
                         <td class="px-6 py-4">
                             <x-link-button 
                                 class="text-black border-black hover:text-white hover:bg-black"
-                                href="/productos/eliminar?id={{$producto->id}}"
+                                href="/productos/eliminar/{{$producto->id}}"
                             >
                                 Eliminar
                             </x-link-button>

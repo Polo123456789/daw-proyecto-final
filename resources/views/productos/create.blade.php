@@ -1,6 +1,7 @@
 <x-app-layout>
     <h1 class="text-2xl text-center m-6 p-6">Crear Producto</h1>
-    <form action="/productos/crear" method="post">
+    <form action="/api/productos/crear" method="post">
+        @csrf
         <x-input-with-floating-label type="text" name="nombre" minlength="1" maxlength="60" required>
             Nombre
         </x-input-with-floating-label>
