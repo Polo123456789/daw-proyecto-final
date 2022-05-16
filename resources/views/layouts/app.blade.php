@@ -24,7 +24,7 @@
                 <x-side-bar></x-side-bar>
                 
                 <!-- Page Content -->
-                <main class="h-full m-16">
+                <main class="h-full m-16 grow">
                     {{ $slot }}
                 </main>
             </div>

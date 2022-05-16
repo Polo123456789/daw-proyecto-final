@@ -9,21 +9,17 @@
                     Donde puedes comprar los mejores productos, a los mejores precios
                 </p>
                 <div class="flex justify-around">
-                    <a class="text-inherit m-4 text-2xl border border-white p-2 rounded hover:bg-white hover:text-black"
-                       href="/login"
-                    >
-                        Iniciar sesion
-                    </a>
-                    <a class="text-inherit m-4 text-2xl border border-white p-2 rounded hover:bg-white hover:text-black"
-                       href="/register"
-                    >
+                    <x-link-button class="text-2xl text-inherit border-white hover:bg-white hover:text-black" href="/login">
+                        Iniciar Sesion
+                    </x-link-button>
+                    <x-link-button class="text-2xl text-inherit border-white hover:bg-white hover:text-black" href="/register">
                         Registrarse
-                    </a>
+                    </x-link-button>
                 </div>
             </div>
         </div>
     </div>
-    <div id="productos" class="m-12 grid grid-cols-3 gap-1.5">
+    <div id="productos" class="m-12 grid grid-cols-3 gap-1.5 justify-items-center">
         <div class="max-w-sm rounded overflow-hidden shadow-lg">
             <img class="w-full" src="/img/aguacate.jpg">
             <div class="px-6 py-4">
