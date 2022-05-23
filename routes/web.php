@@ -1,16 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
 
 use App\Http\Controllers\ProductsController;
-use App\Models\Producto;
-
 use App\Http\Controllers\ClientsController;
-use App\Models\Cliente;
-
 use App\Http\Controllers\EmployeesController;
-use App\Models\Empleado;
+use App\Http\Controllers\ProvidersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,6 +54,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/empleados/eliminar/{id}', [EmployeesController::class, 'getEliminar']);
     Route::post('/api/empleados/eliminar', [EmployeesController::class, 'apiEliminar']);
 
+    Route::get('/proveedores', [ProvidersController::class, 'index']);
+    Route::get('/proveedores/crear', [ProvidersController::class, 'getCrear']);
+    Route::post('/api/proveedores/crear', [ProvidersController::class, 'apiCrear']);
+    Route::get('/proveedores/modificar/{id}', [ProvidersController::class, 'getModificar']);
+    Route::post('/api/proveedores/modificar', [ProvidersController::class, 'apiModificar']);
+    Route::get('/proveedores/eliminar/{id}', [ProvidersController::class, 'getEliminar']);
+    Route::post('/api/proveedores/eliminar', [ProvidersController::class, 'apiEliminar']);
 });
 
 

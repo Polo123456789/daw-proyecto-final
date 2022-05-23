@@ -19,17 +19,17 @@ class ProvidersController extends Controller
      * @param Integer $id
      */
     public function getModificar($id) {
-        return view('proveedores/modify', ['proveedores' => Proveedor::findOrFail($id)]);
+        return view('proveedores/modify', ['proveedor' => Proveedor::findOrFail($id)]);
     }
 
     /**
      * @param Integer $id
      */
     public function getEliminar($id) {
-        return view('proveedores/delete', ['proveedores' => Proveedor::findOrFail($id)]);
+        return view('proveedores/delete', ['proveedor' => Proveedor::findOrFail($id)]);
     }
 
-/**
+    /**
      * @param  Request  $request
      * @return Response
      */
