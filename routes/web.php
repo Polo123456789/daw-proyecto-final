@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\EmployeesController;
 use App\Http\Controllers\ProvidersController;
+use App\Http\Controllers\MarcaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,6 +62,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/api/proveedores/modificar', [ProvidersController::class, 'apiModificar']);
     Route::get('/proveedores/eliminar/{id}', [ProvidersController::class, 'getEliminar']);
     Route::post('/api/proveedores/eliminar', [ProvidersController::class, 'apiEliminar']);
+
+
+    Route::get('/marcas', [MarcaController::class, 'index']);
+    Route::get('/marcas/crear', [MarcaController::class, 'getCrear']);
+    Route::post('/api/marcas/crear', [MarcaController::class, 'apiCrear']);
+    Route::get('/marcas/modificar/{id}', [MarcaController::class, 'getModificar']);
+    Route::post('/api/marcas/modificar', [MarcaController::class, 'apiModificar']);
+    Route::get('/marcas/eliminar/{id}', [MarcaController::class, 'getEliminar']);
+    Route::post('/api/marcas/eliminar', [MarcaController::class, 'apiEliminar']);
 });
 
 

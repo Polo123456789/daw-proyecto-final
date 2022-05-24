@@ -2,9 +2,9 @@
     <div class="w-full flex">
         <x-link-button 
             class="text-white bg-gray-700 border-slate-800 hover:bg-slate-900"
-            href="/productos/crear"
+            href="/marcas/crear"
         >
-            Crear nuevo Producto
+            Crear nueva Marca
         </x-link-button>
     </div>
 
@@ -12,27 +12,19 @@
         <thead class="text-xs text-gray-700 uppercase bg-gray-50">
             <th>Id</th>
             <th>Nombre</th>
-            <th>Precio</th>
-            <th>Existencias</th>
-            <th>Marca</th>
-            <th>Proveedor</th>
             <th></th>
             <th></th>
         </thead>
         <tbody>
-            @if (count($productos) != 0)
-                @foreach ($productos as $producto)
+            @if (count($marcas) != 0)
+                @foreach ($marcas as $marca)
                     <tr class="bg-white border-b">
-                        <td class="px-6 py-4">{{$producto->id}}</td>
-                        <td class="px-6 py-4">{{$producto->nombre}}</td>
-                        <td class="px-6 py-4">Q {{$producto->precio}}</td>
-                        <td class="px-6 py-4">{{$producto->existencias}}</td>
-                        <td class="px-6 py-4">{{$producto->marca->nombre}}</td>
-                        <td class="px-6 py-4">{{$producto->proveedor->nombre}}</td>
+                        <td class="px-6 py-4">{{$marca->id}}</td>
+                        <td class="px-6 py-4">{{$marca->nombre}}</td>
                         <td class="px-6 py-4">
                             <x-link-button 
                                 class="text-black border-black hover:text-white hover:bg-black"
-                                href="/productos/modificar/{{$producto->id}}"
+                                href="/marcas/modificar/{{$marca->id}}"
                             >
                                 Modificar
                             </x-link-button>
@@ -40,7 +32,7 @@
                         <td class="px-6 py-4">
                             <x-link-button 
                                 class="text-black border-black hover:text-white hover:bg-black"
-                                href="/productos/eliminar/{{$producto->id}}"
+                                href="/marcas/eliminar/{{$marca->id}}"
                             >
                                 Eliminar
                             </x-link-button>
@@ -49,9 +41,9 @@
                 @endforeach
             @else
                 <tr class="bg-white border-b">
-                    <td colspan="8" class="px-6 py-4">
+                    <td colspan="4" class="px-6 py-4">
                         <p>Aun no hay datos</p>
-                        <p>Haga click en "Crear nuevo producto" para crear productos</p>
+                        <p>Haga click en "Crear nueva marca" para crear marcas</p>
                     </td>
                 </tr>
             @endif

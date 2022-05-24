@@ -5,6 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\Proveedor;
+use App\Models\Marca;
+
 class Producto extends Model
 {
     use HasFactory;
@@ -12,6 +15,16 @@ class Producto extends Model
     protected $fillable = [
         "nombre",
         "precio",
-        "existencias"
+        "existencias",
+        "marca_id",
+        "proveedor_id"
     ];
+
+    public function proveedor() {
+        return $this->belongsTo(Proveedor::class);
+    }
+
+    public function marca() {
+        return $this->belongsTo(Marca::class);
+    }
 }

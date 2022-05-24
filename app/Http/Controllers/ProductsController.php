@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Producto;
+use App\Models\Marca;
+use App\Models\Proveedor;
 
 class ProductsController extends Controller
 {
@@ -12,14 +14,23 @@ class ProductsController extends Controller
     }
 
     public function getCrear() {
-        return view('productos/create');
+        return view('productos/create',
+                    [
+                        'marcas' => Marca::all(),
+                        'proveedores' => Proveedor::all()
+                    ]);
     }
 
     /**
      * @param Integer $id
      */
     public function getModificar($id) {
-        return view('productos/modify', ['producto' => Producto::findOrFail($id)]);
+        return view('productos/modify',
+                    [
+                        'producto' => Producto::findOrFail($id),
+                        'marcas' => Marca::all(),
+                        'proveedores' => Proveedor::all()
+                    ]);
     }
 
     /**
@@ -38,6 +49,8 @@ class ProductsController extends Controller
         $producto->nombre = $request->nombre;
         $producto->precio = $request->precio;
         $producto->existencias = $request->existencias;
+        $producto->marca_id = $request->marca_id;
+        $producto->proveedor_id = $request->proveedor_id;
 
         $producto->save();
 
@@ -53,6 +66,8 @@ class ProductsController extends Controller
         $producto->nombre = $request->nombre;
         $producto->precio = $request->precio;
         $producto->existencias = $request->existencias;
+        $producto->marca_id = $request->marca_id;
+        $producto->proveedor_id = $request->proveedor_id;
 
         $producto->save();
 

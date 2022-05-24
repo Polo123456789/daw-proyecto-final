@@ -12,7 +12,7 @@
             Contacto
         </x-input-with-floating-label>
         <div class="flex justify-center">
-            <input type="submit" value="Crear" class="text-2xl m-4 border px-4 py-2 rounded text-white bg-gray-800 hover:bg-gray-900">
+            <input type="submit" value="Modificar" class="text-2xl m-4 border px-4 py-2 rounded text-white bg-gray-800 hover:bg-gray-900">
         </div>
     </form>
 </x-app-layout>
