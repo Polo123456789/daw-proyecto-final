@@ -10,4 +10,5 @@ class FacturaProducto extends Model
     use HasFactory;
 
     protected $table = "factura_producto";
+    public $timestamps = false;
 }

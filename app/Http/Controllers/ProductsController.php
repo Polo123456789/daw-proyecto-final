@@ -33,6 +33,7 @@ class ProductsController extends Controller
                     ]);
     }
 
+    
     /**
      * @param Integer $id
      */

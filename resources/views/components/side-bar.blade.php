@@ -16,6 +16,9 @@
             <x-side-bar-item href="/marcas">
                 Marcas
             </x-side-bar-item>
+            <x-side-bar-item href="/facturas">
+                Facturas
+            </x-side-bar-item>
         </ul>
     </div>
 </aside>

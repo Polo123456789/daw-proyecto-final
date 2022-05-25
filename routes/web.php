@@ -7,6 +7,7 @@ use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\EmployeesController;
 use App\Http\Controllers\ProvidersController;
 use App\Http\Controllers\MarcaController;
+use App\Http\Controllers\FacturaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,6 +72,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/api/marcas/modificar', [MarcaController::class, 'apiModificar']);
     Route::get('/marcas/eliminar/{id}', [MarcaController::class, 'getEliminar']);
     Route::post('/api/marcas/eliminar', [MarcaController::class, 'apiEliminar']);
+
+
+    Route::get('/facturas', [FacturaController::class, "index"]);
+    Route::get('/facturas/crear', [FacturaController::class, "getCrear"]);
+    Route::post('/api/facturas/crear', [FacturaController::class, "apiCrear"]);
+    Route::get('/facturas/gestionar/{id}', [FacturaController::class, "getGestionar"]);
+    Route::post('/api/facturas/gestionar', [FacturaController::class, "apiGestionar"]);
+    Route::get('/facturas/eliminar/{id}', [FacturaController::class, "getEliminar"]);
+    Route::post('/api/facturas/eliminar', [FacturaController::class, "apiEliminar"]);
 });
 
 
