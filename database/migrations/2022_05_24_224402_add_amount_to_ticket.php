@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('factura_producto', function (Blueprint $table) {
-            $table->integer('cantidad');
+            $table->integer('cantidad')->default(0);
         });
     }
 
