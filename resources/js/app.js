@@ -45,6 +45,10 @@ Alpine.data('factura', () => ({
         const index = this.currentlySelected;
         const existencias = this.availableProducts[index].existencias;
 
+        alert(`index: ${index}`)
+        alert(`existencias: ${existencias}`)
+        alert(`seleccionada: ${this.quantitySelected}`)
+
         if (existencias < this.quantitySelected) {
             alert(`La cantidad de producto que esta solicitando excede las existencias de ${existencias}`);
             return;

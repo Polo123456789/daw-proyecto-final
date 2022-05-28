@@ -5152,6 +5152,9 @@ alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"].data('factura', function () {
     addProduct: function addProduct() {
       var index = this.currentlySelected;
       var existencias = this.availableProducts[index].existencias;
+      alert("index: ".concat(index));
+      alert("existencias: ".concat(existencias));
+      alert("seleccionada: ".concat(this.quantitySelected));
 
       if (existencias < this.quantitySelected) {
         alert("La cantidad de producto que esta solicitando excede las existencias de ".concat(existencias));

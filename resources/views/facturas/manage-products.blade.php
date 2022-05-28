@@ -56,6 +56,10 @@
         <details>
             <summary class="text-white inline">Info de debug</summary>
 
+            <p>Cantidad:</p>
+            <pre x-text="quantitySelected"></pre>
+            <p>Existencias:</p>
+            <pre x-text="availableProducts[currentlySelected].existencias"></pre>
             <p>Seleccionados:</p>
             <pre x-text="JSON.stringify(selectedProducts, null, 2)"></pre>
             <p>Disponibles:</p>
