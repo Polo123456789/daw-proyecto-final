@@ -52,8 +52,19 @@
         >
             Confirmar Factura
         </button>
-    </div>
 
+        <details>
+            <summary class="text-white inline">Info de debug</summary>
+
+            <p>Seleccionados:</p>
+            <pre x-text="JSON.stringify(selectedProducts, null, 2)"></pre>
+            <p>Disponibles:</p>
+            <pre x-text="JSON.stringify(availableProducts, null, 2)"></pre>
+            <p>Actual:</p>
+            <pre x-text="currentlySelected"></pre>
+            <pre x-text="availableProducts[currentlySelected].nombre"></pre>
+        </details>
+    </div>
 </x-app-layout>
 
 <script type="application/json" id="ticketDetails">
